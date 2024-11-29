@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample 1</title>
+    <style>
+        /* Body background color */
+        body {
+            background-color: #FFF5EE; /* Light gray background for the entire page */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changes font to a clean sans-serif font */
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+            font-size: large;
+        }
+        
+        /* Container that holds the image and text */
+        .container {
+            display: flex; /* Aligns items in a row */
+            align-items: center; /* Vertically aligns text with the image */
+            max-width: 100%; /* Ensures the container doesn't overflow the screen */
+            overflow: hidden; /* Prevents any content from spilling over */
+            background-color: #ffffff; /* White background for the container */
+            padding: 20px; /* Adds padding around the container */
+            border-radius: 8px; /* Optional: Rounded corners for the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+            margin: 20px; /* Adds space around the container */
+        }
+        
+        /* Style for the image */
+        .container img {
+            max-width: 150px; /* Ensures the image doesn't get too large */
+            margin-right: 20px; /* Space between the image and the text */
+            border-radius: 8px; /* Optional: Adds rounded corners to the image */
+            cursor: pointer; /* Makes the image look clickable */
+        }
+        
+        /* Style for the paragraph */
+        .container p {
+            max-width: 500px; /* Limits the paragraph width */
+            word-wrap: break-word; /* Ensures text doesn't overflow */
+        }
+        
+        /* Header style */
+        h1 {
+            text-align: center;
+            color: #333333; /* Dark text for the header */
+            font-size: 2rem;
+            font-family: georgia,serif;
+            margin-top: 10px;
+        }
+
+        /* Apply flex-direction: row-reverse to the second container */
+        .container.reverse {
+            flex-direction: row-reverse; /* Reverses the order of image and text */
+        }
+
+        /* Modal (the popup) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Fallback background */
+        }
+
+        .modal-content {
+            margin: 15% auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack image and text vertically */
+                text-align: center; /* Center the content for better readability on small screens */
+                padding: 15px; /* Adjusts padding for small screens */
+            }
+            
+            .container img {
+                max-width: 120px; /* Slightly smaller images on smaller screens */
+                margin-bottom: 15px; /* Add space below the image */
+            }
+            
+            .container p {
+                max-width: 100%; /* Allow the paragraph to take up more width */
+                padding: 10px; /* Add padding to the paragraph */
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Smaller text for the heading */
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem; /* Even smaller heading font */
+            }
+
+            .container img {
+                max-width: 100px; /* Further decrease image size on very small screens */
+            }
+
+            .modal-content {
+                max-width: 90%; /* Adjust modal image width for very small screens */
+                max-height: 70%; /* Adjust modal image height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><i>Happy Anniversary Love ❤️</i></h1>
+
+    <!-- First Image Container -->
+    <div class="container">
+        <img src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/419664411_1372752203366649_6575119963292374551_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE2eLQx2dWEOU1f0_JQ-UdVm4i37G8g77KbiLfsbyDvshqaflSyysh35V0yVPhcWUYqhX37jtIso9PVpvUXwOWz&_nc_ohc=TYb3yHJfJ7oQ7kNvgGTNg59&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=A2uwifd2R32YOLftN4nlrNS&oh=00_AYBLnzFuLc0FDYKoPCb-PvSDcXDfwcziT3OAWm8-GRBEtg&oe=674E5FA7" alt="Image 1" class="modal-trigger">
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula urna eget lorem consequat, sit amet dapibus elit hendrerit. Phasellus nec justo vel velit auctor condimentum.
+        </p>
+    </div>
+    
+    <!-- Modal for Image 1 -->
+    <div id="modal1" class="modal">
+        <span class="close" id="close1">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Second Image Container -->
+    <div class="container reverse">
+        <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/456924627_1499523544022847_4455464569940832353_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEXWiGyL_l24MrrtCoxlrU7_EFPr5NHaGL8QU-vk0doYp1gZ3eIoMyXIFTcfqdNNuoegaQutwCp-UPIQZgDo2n0&_nc_ohc=EthHRYHdLb0Q7kNvgHROsq5&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=AWCqVXw7eKmMCYg8YB1tG64&oh=00_AYBlLsYMlUJcGtykIfuhhzZg-8So3LXReZGL5J5ht3v6rw&oe=674E5E81" alt="Image 2" class="modal-trigger">
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula urna eget lorem consequat, sit amet dapibus elit hendrerit. Phasellus nec justo vel velit auctor condimentum.
+        </p>
+    </div>
+
+    <!-- Modal for Image 2 -->
+    <div id="modal2" class="modal">
+        <span class="close" id="close2">&times;</span>
+        <img class="modal-content" id="img02">
+    </div>
+
+    <!-- Third Image Container -->
+    <div class="container">
+        <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/428710330_1396783977630138_5906510127868831027_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEG_jiMRyI-UYvBonY2y-yZHjXwP_d0k5YeNfA_93STlsqM35nxDV4EzjhmyA3jfQF-jEJVX6m9EVCqheGM1k4e&_nc_ohc=CBSikDJUEwYQ7kNvgHJMUK4&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A2SBXGt7hz-LM1OsksZ60vV&oh=00_AYDj3b6EsL0Ul3zgSvL9rxRjsZrYue34RzGIP0VS39NJYA&oe=674E4DB8" alt="Image 3" class="modal-trigger">
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula urna eget lorem consequat, sit amet dapibus elit hendrerit. Phasellus nec justo vel velit auctor condimentum.
+        </p>
+    </div>
+
+    <!-- Modal for Image 3 -->
+    <div id="modal3" class="modal">
+        <span class="close" id="close3">&times;</span>
+        <img class="modal-content" id="img03">
+    </div>
+
+    <script>
+        // Get all images with the modal-trigger class
+        const images = document.querySelectorAll('.modal-trigger');
+        
+        // Get all modals
+        const modals = [document.getElementById('modal1'), document.getElementById('modal2'), document.getElementById('modal3')];
+        
+        // Get all modal image elements
+        const modalImages = [document.getElementById('img01'), document.getElementById('img02'), document.getElementById('img03')];
+        
+        // Get all close buttons
+        const closeButtons = [document.getElementById('close1'), document.getElementById('close2'), document.getElementById('close3')];
+
+        images.forEach((img, index) => {
+            img.onclick = function() {
+                modals[index].style.display = "block";
+                modalImages[index].src = this.src; // Set the modal image source to the clicked image
+            };
+        });
+
+        closeButtons.forEach((btn, index) => {
+            btn.onclick = function() {
+                modals[index].style.display = "none";
+            };
+        });
+
+        // Close modal if clicked outside the image
+        modals.forEach(modal => {
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+    </script>
+</body>
+</html>
