@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front page</title>
+    <link rel="stylesheet" href="Data/css/stylesindex.css">
+    <style>
+        body {
+            background-image: url('Data/Photos/Flower.jpg');
+            background-size: 100%; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: repeat; /* Prevents repeating the image */
+            margin: 0; /* Removes default margin */
+            height: 100vh; /* Ensures the body takes up the entire viewport height */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form class="login-form" id="loginForm">
+            <div class="login-input">
+                <label for="username">Email:</label>
+                <!-- Default username set to 'alfred' -->
+                <input type="text" id="username" name="username" aria-label="Username input" required>
+            </div>
+            <div class="login-input">
+                <label for="password">Password:</label>
+                <!-- Default password set to '123' -->
+                <input type="password" id="password" name="password" aria-label="Password input" required>
+            </div>
+            <button type="submit" class="start-btn">Login</button>
+            <p id="loginSuccessMessage" style="display: none; color: green;">Login successful! Redirecting...</p>
+            
+            <p>Username: Your gmail address <br>
+            Password: Date when you said Your Sweet YES!</p>
 
+        </form>
+        <audio id="backgroundMusic" loop>
+            <source src="Data/music/Canon in D - Pachelbel - Acoustic Guitar.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="musicButton">Play Music</button>
+    </div>
+
+    <script>
+        // Modified form submission with success message
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'colleenadejesus@gmail.com' && password === '01142024') {
+                document.getElementById('loginSuccessMessage').style.display = 'block';
+                setTimeout(function() {
+                    window.location.href = 'page2.html';
+                }, 2000); // Redirect after 2 seconds
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+
+    <script>
+        // JavaScript to control play and pause functionality
+        const music = document.getElementById('backgroundMusic');
+        const musicButton = document.getElementById('musicButton');
+
+        musicButton.addEventListener('click', () => {
+            if (music.paused) {
+                music.play(); // Play music
+                musicButton.textContent = 'Pause Music'; // Update button text
+            } else {
+                music.pause(); // Pause music
+                musicButton.textContent = 'Play Music'; // Update button text
+            }
+        });
+    </script>
+</body>
+</html>

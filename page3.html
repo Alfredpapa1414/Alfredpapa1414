@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy First Anniversary</title>
+    <link rel="stylesheet" href="Data/css/stylepage3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('Data/Photos/Flower.jpg');
+            background-size: cover; /* Ensures the image adapts to different screen sizes */
+            background-position: center;
+            background-repeat: repeat;
+            margin: 0;
+            height: 100vh;
+        }
+
+        /* Additional styles if needed */
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">Happy 1st Anniversary love! ❤️</h1>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="Data/music/blue.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="musicButton">Play Music</button>
+
+    <div class="gallery-container">
+        <!-- Cards with correct indices -->
+        <div class="card" onclick="openModal(0)">
+            <img src="Data/Photos/1stdate.jpg" alt="Image 1">
+            <div class="card-text">
+                <h3>1st Date</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(1)">
+            <img src="Data/Photos/1stmass.jpg" alt="Image 2">
+            <div class="card-text">
+                <h3>1st Mass</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(2)">
+            <img src="Data/Photos/1.jpg" alt="Image 3">
+            <div class="card-text">
+                <h3>Coffee</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(3)">
+            <img src="Data/Photos/2.jpg" alt="Image 4">
+            <div class="card-text">
+                <h3>Your Smile</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(4)">
+            <img src="Data/Photos/MonthsaryGift.jpg" alt="Image 5">
+            <div class="card-text">
+                <h3>Monthsary Gift</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(5)">
+            <img src="Data/Photos/ColleenaBirthday.jpg" alt="Image 6">
+            <div class="card-text">
+                <h3>Colleena's Birthday</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(6)">
+            <img src="Data/Photos/HEHE.jpg" alt="Image 7">
+            <div class="card-text">
+                <h3>SMILE!</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(7)">
+            <img src="Data/Photos/Couplebracelet.jpg" alt="Image 8">
+            <div class="card-text">
+                <h3>Couple Kin Bracelet</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(8)">
+            <img src="Data/Photos/Promise Ring.jpg" alt="Image 9">
+            <div class="card-text">
+                <h3>Promise Ring</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal(9)">
+            <img src="Data/Photos/ring.jpg" alt="Image 10">
+            <div class="card-text">
+                <h3>I LOVE YOU COLLEENA!</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Modal Image">
+            <div id="modalText" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script src="Data/java/scriptpage3.js"></script>
+</body>
+</html>
